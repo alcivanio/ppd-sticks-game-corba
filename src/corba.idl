@@ -1,0 +1,14 @@
+module GameApp {
+   interface GameCallback {
+      void  callback(in string message);
+      float askNumberSticksInHand();
+      float chooseABet(in float maxValue);
+      float getAvailableSticks();
+      float getSticksInHand();
+      boolean checkRoundResult(in float numberSticks);
+   };
+   interface Game {
+      string    say(in GameCallback objref, in string message);
+      void      connectNewPlayer(in GameCallback callbackObj);
+   };
+};
